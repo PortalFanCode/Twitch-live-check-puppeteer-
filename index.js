@@ -14,7 +14,7 @@ if (arguments[0].toLowerCase().trim() == "--help") {
     console.log("Usage: tlcheck <username>");
     process.exit()
 }
-
+process.stdout.write("\n Loading, please wait...\r")
 const LINK = "https://www.twitch.tv/" + arguments[0].toLowerCase().trim();
 
 (async () => {
@@ -37,12 +37,15 @@ const LINK = "https://www.twitch.tv/" + arguments[0].toLowerCase().trim();
 
     if (channelValid) {
         if (liveBoolean) {
-            console.log('Live')
+            process.stdout.clearLine();          
+            console.log('Live\n')
         } else {
-            console.log('Offline')
+            process.stdout.clearLine();
+            console.log('Offline\n')
         }
     } else {
-        console.log('Channel does not exist')
+        process.stdout.clearLine();
+        console.log('Channel does not exist\n')
     }
 
     await browser.close();
