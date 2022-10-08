@@ -2,6 +2,9 @@
   "name": "puppeteer-(additional-task-l)",
   "version": "1.0.0",
   "main": "index.js",
+  "bin": {
+    "tlcheck": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +13,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "prompt-sync": "^4.2.0",
     "puppeteer": "^18.2.1"
   }
 }
