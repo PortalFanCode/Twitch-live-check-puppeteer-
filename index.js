@@ -6,7 +6,7 @@ var VALID = true
 const arguments = process.argv.slice(2);
 
 if (arguments.length === 0) {
-    console.log("Please enter a username");
+    console.log("Usage: tlcheck <username>");
     process.exit()
 }
 
