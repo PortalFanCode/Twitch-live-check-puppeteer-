@@ -1,10 +1,21 @@
 #!/usr/bin/env node
 
 const puppeteer = require('puppeteer');
-const prompt = require('prompt-sync')();
 
-const CHANNEL_NAME = prompt("Please enter the channel's name: ")
-const LINK = "https://www.twitch.tv/" + CHANNEL_NAME.toLowerCase().trim();
+var VALID = true
+const arguments = process.argv.slice(2);
+
+if (arguments.length === 0) {
+    console.log("Please enter a username");
+    process.exit()
+}
+
+if (arguments[0].toLowerCase().trim() == "--help") {
+    console.log("Usage: tlcheck <username>");
+    process.exit()
+}
+
+const LINK = "https://www.twitch.tv/" + arguments[0].toLowerCase().trim();
 
 (async () => {
     const browser = await puppeteer.launch({ headless: true });
@@ -16,7 +27,6 @@ const LINK = "https://www.twitch.tv/" + CHANNEL_NAME.toLowerCase().trim();
         const error = document.querySelector('p[data-a-target="core-error-message"]')
         if (!error) return true
         return false
-
     })
 
     const liveBoolean = await page.evaluate(() => {
