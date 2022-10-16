@@ -9,11 +9,11 @@ if (arguments.length === 0) {
     process.exit()
 }
 
-if (arguments[0].toLowerCase().trim() == "--help") {
+if (['-h', '--help'].includes(arguments[0].toLowerCase().trim())) {
     console.log("Usage: tlcheck <username>");
     process.exit()
 }
-if (arguments[0].toLowerCase().trim() == "--version") {
+if (['-v', '--version'].includes(arguments[0].toLowerCase().trim())) {
     const data = require('./package.json');
     console.log(data.version);
     process.exit()
