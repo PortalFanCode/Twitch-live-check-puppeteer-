@@ -30,8 +30,8 @@ const LINK = "https://www.twitch.tv/" + arguments[0].toLowerCase().trim();
     })
 
     const liveBoolean = await page.evaluate(() => {
-        const offlineButton = document.querySelector('.CoreText-sc-cpl358-0.hQCXK')
-        if (!offlineButton) return true;
+        const offlineButton = document.querySelector("#root > div > div.Layout-sc-nxg1ff-0.bSuLAT > div > main > div.root-scrollable.scrollable-area > div.simplebar-scroll-content > div > div > div.channel-root.channel-root--home.channel-root--unanimated > div.Layout-sc-nxg1ff-0.cIfBon > div.channel-root__player.channel-root__player--offline > div:nth-child(2) > div > div > div > div > div.Layout-sc-nxg1ff-0.bNdJnu > div.InjectLayout-sc-588ddc-0.gMZmTd.home-carousel-info > div.Layout-sc-nxg1ff-0.kXoETa > div > div.Layout-sc-nxg1ff-0.pqFci > div.Layout-sc-nxg1ff-0.iXEwvl.channel-status-info.channel-status-info--offline")
+        if (!offlineButton) return true;    
         return false;
     })
 
