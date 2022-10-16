@@ -2,7 +2,6 @@
 
 const puppeteer = require('puppeteer');
 
-var VALID = true
 const arguments = process.argv.slice(2);
 
 if (arguments.length === 0) {
@@ -12,6 +11,11 @@ if (arguments.length === 0) {
 
 if (arguments[0].toLowerCase().trim() == "--help") {
     console.log("Usage: tlcheck <username>");
+    process.exit()
+}
+if (arguments[0].toLowerCase().trim() == "--version") {
+    const data = require('./package.json');
+    console.log(data.version);
     process.exit()
 }
 process.stdout.write("\n Loading, please wait...\r")
