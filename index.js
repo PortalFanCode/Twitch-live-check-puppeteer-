@@ -14,6 +14,8 @@ const LINK = "https://www.twitch.tv/" + CHANNEL_NAME.toLowerCase().trim();
         const error = document.querySelector('p[data-a-target="core-error-message"]')
         if (!error) {
             return true
+        } else {
+            return false
         }
     })
 
