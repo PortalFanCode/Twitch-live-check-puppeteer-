@@ -5,7 +5,7 @@ const CHANNEL_NAME = prompt("Please enter the channel's name: ")
 const LINK = "https://www.twitch.tv/" + CHANNEL_NAME.toLowerCase().trim();
 
 (async () => {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
     await page.goto(LINK, { waitUntil: 'networkidle2' });
