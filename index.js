@@ -12,9 +12,7 @@ const LINK = "https://www.twitch.tv/" + CHANNEL_NAME.toLowerCase().trim();
 
     const channelValid = await page.evaluate(() => {
         const error = document.querySelector('p[data-a-target="core-error-message"]')
-        if (!error) {
-            return true
-        }
+        if (!error) return true
         return false
 
     })
